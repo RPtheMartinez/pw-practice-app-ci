@@ -13,6 +13,7 @@ export default defineConfig<TestOptions>({
 
   retries: 1,
   reporter: [
+    // Use "dot" reporter on CI, "list" otherwise (Playwright default).
     process.env.CI ? ["dot"] : ["list"],
     [
       "@argos-ci/playwright/reporter",
